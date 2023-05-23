@@ -1,46 +1,53 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "Hiếu Cà Mau",
-      "email": "hieu@gmail.com",
-      "age": 24,
-      "phone": "0324851352"
-    },
-    {
-      "id": 2,
-      "username": "Bình gold",
-      "email": "binh@gmail.com",
-      "age": 24,
-      "phone": "0327857652"
-    },
-    {
-      "id": 4,
-      "username": "Khánh RickKid",
-      "email": "khanh@gmail.com",
-      "age": 26,
-      "phone": "0325657752"
-    },
-    {
-      "username": "Huy",
-      "email": "huy@gmail.com",
-      "age": 24,
-      "phone": "0324851353",
-      "id": 7
-    },
-    {
       "username": "Hải",
       "email": "hai@gmail.com",
-      "age": 25,
-      "phone": "0324888888",
-      "id": 3
+      "age": "29",
+      "phone": "0988667668",
+      "id": 2
     },
     {
-      "username": "",
-      "email": "",
-      "age": "",
-      "phone": "",
-      "id": 8
+      "username": "Em Hà",
+      "email": "hangien@gmail.com",
+      "age": "18",
+      "phone": "03121354",
+      "id": 4
+    },
+    {
+      "username": "hùng chơi đá",
+      "email": "hung@gmail.com",
+      "age": "20",
+      "phone": "03121354",
+      "id": 5
+    },
+    {
+      "username": "Hiếu thứ 3",
+      "email": "hieut3@gmail.com",
+      "age": "29",
+      "phone": "031213543324",
+      "id": 12
+    },
+    {
+      "username": "Hiếu thứ 7",
+      "email": "hieut7@gmail.com",
+      "age": "24",
+      "phone": "0312135444",
+      "id": 13
+    },
+    {
+      "username": "Giang",
+      "email": "giang@gmail.com",
+      "age": "25",
+      "phone": "03121354",
+      "id": 16
+    },
+    {
+      "username": "LongDuong",
+      "email": "dglong1994@gmail.com",
+      "age": "28",
+      "phone": "03121354",
+      "id": 17
     }
   ]
 }

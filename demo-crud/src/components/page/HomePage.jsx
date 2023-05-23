@@ -3,9 +3,12 @@ import axios from 'axios'
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import Modal from 'react-bootstrap/Modal';
 
 function HomePage() {
     const [data, setData] = useState([]);
+    const [checked, setChecked] = useState(true);
+    const [view, setView] = useState(null)
 
     const loadUser = async () => {
         const result = await axios.get("http://localhost:8000/users")
@@ -16,11 +19,23 @@ function HomePage() {
 
     useEffect(() => {
         loadUser()
-    }, [])
+    }, [checked])
+
+    const handleDelete = async (id) => {
+        const result = await axios.delete(`http://localhost:8000/users/${id}`)
+        setChecked(!checked);
+    }
+    const [show, setShow] = useState(false);
+
+    const handleClose = (id) => setShow(false);
+    const handleShow = (e) => {
+        setView(e);
+        setShow(true);
+    };
     return (
         <div>
             <h2 style={{ textAlign: "center" }}>Home Page</h2>
-            <Table striped bordered hover style={{textAlign:"center"}}>
+            <table striped bordered hover style={{ textAlign: "center" }}>
                 <thead>
                     <tr>
                         <th>#</th>
@@ -41,16 +56,39 @@ function HomePage() {
                             <td>{e.email}</td>
                             <td>{e.age}</td>
                             <td>{e.phone}</td>
-                            <td> <Button variant="info"><i className="fa-solid fa-eye"></i></Button></td>
+                            <td> <Button variant="info" onClick={() => handleShow(e)}><i className="fa-solid fa-eye"></i></Button></td>
+                            <Modal show={show} onHide={handleClose}>
+                                <Modal.Header closeButton>
+                                    <Modal.Title>User infor</Modal.Title>
+                                </Modal.Header>
+                                {view && (
+                                    <>
+                                        <Modal.Body>ID: {view.id}</Modal.Body>
+                                        <Modal.Body>Username: {view.username}</Modal.Body>
+                                        <Modal.Body>Email: {view.email}</Modal.Body>
+                                        <Modal.Body>Age: {view.age}</Modal.Body>
+                                        <Modal.Body>Phone: {view.phone}</Modal.Body>
+                                    </>
+                                )}
+                                <Modal.Footer>
+                                    <Button variant="secondary" onClick={handleClose}>
+                                        Close
+                                    </Button>
+                                    <Button variant="primary" onClick={handleClose}>
+                                        Save Changes
+                                    </Button>
+                                </Modal.Footer>
+                            </Modal>
                             <td>
                                 <Link to={`/user/edit/${e.id}`}>
-                                <Button variant="warning">Edit</Button>
+                                    <Button variant="warning">Edit</Button>
                                 </Link>
                             </td>
-                            <td> <Button variant="danger">Delete</Button></td>
+                            <td> <Button variant="danger" onClick={() => handleDelete(e.id)}>Delete</Button></td>
                         </tr>)}
                 </tbody>
-            </Table>
+            </table>
+
         </div>
     )
 }
