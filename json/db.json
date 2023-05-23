@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Hiếu Cà Mau",
+      "email": "hieu@gmail.com",
+      "age": 24,
+      "phone": "0324851352"
+    },
+    {
+      "id": 2,
+      "username": "Bình gold",
+      "email": "binh@gmail.com",
+      "age": 24,
+      "phone": "0327857652"
+    },
+    {
+      "id": 4,
+      "username": "Khánh RickKid",
+      "email": "khanh@gmail.com",
+      "age": 26,
+      "phone": "0325657752"
+    },
+    {
+      "username": "Huy",
+      "email": "huy@gmail.com",
+      "age": 24,
+      "phone": "0324851353",
+      "id": 7
+    },
+    {
+      "username": "Hải",
+      "email": "hai@gmail.com",
+      "age": 25,
+      "phone": "0324888888",
+      "id": 3
+    },
+    {
+      "username": "",
+      "email": "",
+      "age": "",
+      "phone": "",
+      "id": 8
+    }
+  ]
+}
